@@ -27,14 +27,15 @@ export default Marty.createContainer(Grid, {
     }.bind(this), 200);
 
     window.setInterval(function () {
-      this.app.gridActions.addMeetup({
-        x: parseInt(Math.random() * 20, 10),
-        y: parseInt(Math.random() * 15, 10)
-      });
-    }.bind(this), 2000);
+      let meetup = this.app.meetupStore.getNextMeetup();
+      if (meetup) {
+        this.app.gridActions.addMeetup(meetup);
+      } else {
+        console.log('you won');
+      }
+    }.bind(this), 3000);
 
     window.addEventListener('keydown', function(event) {
-      console.log(event.keyCode);
       switch(event.keyCode) {
       case 39:
         this.app.gridActions.setDirection('right');
