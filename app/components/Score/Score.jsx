@@ -12,7 +12,8 @@ class Score extends React.Component {
   * @return Markup for the component
   */
   render() {
-    console.log('rendering a score', this.props.hit );
+    
+//    console.log('rendering a score', this.props.hit );
     
     const meetup = this.props.hit;
     let info = '';
@@ -30,7 +31,7 @@ class Score extends React.Component {
   
   createInfo( meetup ) {
     const title = meetup.name;
-    const img = meetup.photo urls.thumb ? <img src={meetup.photo urls.thumb} /> : '' ;
+    const img = meetup.photo_urls.thumb ? <img src={meetup.photo urls.thumb} /> : '' ;
     let country = countries[meetup.country];
     country = country.charAt(0).toUpperCase() + country.slice(1);
     const location = meetup.city + ', ' + country;
