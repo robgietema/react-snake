@@ -14,6 +14,7 @@
 
 import React from 'react';
 import Marty from 'marty';
+import GridConstants from '../../constants/GridConstants';
 
 /**
  * This class defines the Grid store.
@@ -44,7 +45,12 @@ class GridStore extends Marty.Store {
       }, {
         x: 0,
         y: 2
-      }]
+      }],
+      direction: 'right'
+    };
+    this.handlers = {
+      setDirection: GridConstants.DIRECTION,
+      move: GridConstants.MOVE
     };
   }
 
@@ -66,6 +72,55 @@ class GridStore extends Marty.Store {
    */
   getSnake() {
     return this.state.snake;
+  }
+
+  /**
+   * Set direction.
+   *
+   * @method setDirection
+   * @param {String} direction Direction
+   */
+  setDirection(direction) {
+    this.state.direction = direction;
+    this.hasChanged();
+  }
+
+  /**
+   * Move the snake.
+   *
+   * @method move
+   */
+  move() {
+    let pos = this.state.snake[this.state.snake.length-1];
+    let newpos;
+    switch(this.state.direction) {
+    case 'right':
+      newpos = {
+        x: (pos.x + 21) % 20,
+        y: pos.y
+      }
+      break;  
+    case 'left':
+      newpos = {
+        x: (pos.x + 19) % 20,
+        y: pos.y
+      }
+      break;  
+    case 'up':
+      newpos = {
+        x: pos.x,
+        y: (pos.y + 14) % 15
+      }
+      break;  
+    case 'down':
+      newpos = {
+        x: pos.x,
+        y: (pos.y + 16) % 15
+      }
+      break;  
+    }
+    this.state.snake.push(newpos);
+    this.hasChanged();
   }
 }
 

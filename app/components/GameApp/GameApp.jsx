@@ -17,6 +17,7 @@ import Marty from 'marty';
 import Game from '../Game/Game';
 const { ApplicationContainer } = Marty;
 import GridStore from '../../stores/GridStore/GridStore';
+import GridActions from '../../actions/GridActions';
 
 /**
  * This class defines the Snake application.
@@ -34,7 +35,8 @@ class GameApplication extends Marty.Application {
   constructor(options) {
     super(options);
     this.register({
-      'gridStore': GridStore
+      'gridStore': GridStore,
+      'gridActions': GridActions
     });
   }
 }

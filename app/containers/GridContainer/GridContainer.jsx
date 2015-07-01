@@ -17,6 +17,29 @@ import Grid from '../../components/Grid/Grid';
 
 export default Marty.createContainer(Grid, {
   listenTo: 'gridStore',
+  componentDidMount() {
+    window.setInterval(function () {
+      this.app.gridActions.move();
+    }.bind(this), 200);
+
+    window.addEventListener('keydown', function(event) {
+      console.log(event.keyCode);
+      switch(event.keyCode) {
+      case 39:
+        this.app.gridActions.setDirection('right');
+        break;
+      case 40:
+        this.app.gridActions.setDirection('down');
+        break;
+      case 38:
+        this.app.gridActions.setDirection('up');
+        break;
+      case 37:
+        this.app.gridActions.setDirection('left');
+        break;
+      }
+    }.bind(this));
+  },
   fetch: {
     snake() {
       return this.app.gridStore.getSnake();
