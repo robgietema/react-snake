@@ -1,5 +1,5 @@
 /**
- * Snake component.
+ * Game component.
  *
  * @author Rob Gietema
  * @licstart  The following is the entire license notice for the JavaScript
@@ -13,14 +13,14 @@
  */
 
 import React from 'react';
-import './Snake.scss';
+import './Game.scss';
 
 /**
- * This class defines the Snake component.
+ * This class defines the Game component.
  *
- * @class Snake
+ * @class Game
  */
-class Snake extends React.Component {
+class Game extends React.Component {
 
   /**
    * Render method.
@@ -30,9 +30,13 @@ class Snake extends React.Component {
    */
   render() {
     return (
-      <h1>Hello world</h1>
+      <div className="game">
+        <Grid />
+        <Snake />
+        <Score />
+      </div>
     );
   }
 }
 
-export default Snake;
+export default Game;
