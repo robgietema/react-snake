@@ -31,18 +31,18 @@ class Score extends React.Component {
   
   createInfo( meetup ) {
     const title = meetup.name;
-    const img = meetup.photo_urls.thumb ? <img src={meetup.photo urls.thumb} /> : '' ;
+    const img = meetup.photo_urls.thumb ? <img src={meetup.photo_urls.thumb} /> : '' ;
     let country = countries[meetup.country];
     country = country.charAt(0).toUpperCase() + country.slice(1);
     const location = meetup.city + ', ' + country;
-    const date = meetup.org starttime;
-    const short desc = {  html: meetup.short desc};
+    const date = meetup.org_starttime;
+    const short_desc = {  html: meetup.short_desc};
     
     return (
       <div class="info">
         <h1>{title}</h1>
         <div className="locationdate">{location}, {date}</div>
-        <div dangerouslySetInnerHTML={short desc}></div>
+        <div dangerouslySetInnerHTML={short_desc}></div>
       </div>
     );
   }
