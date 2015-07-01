@@ -16,9 +16,7 @@ import Marty from 'marty';
 import Grid from '../../components/Grid/Grid';
 
 export default Marty.createContainer(Grid, {
-  
   listenTo: 'gridStore',
-  
   componentDidMount() {
     this.app.meetupsQueries.getMeetups();
     

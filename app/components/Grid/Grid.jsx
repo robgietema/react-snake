@@ -7,6 +7,11 @@ import './Grid.scss';
 const wide = 20;
 const high = 15;
 
+/**
+ * This class defines the Grid component.
+ *
+ * @class Grid
+ */
 class Grid extends React.Component {
   
   /**
