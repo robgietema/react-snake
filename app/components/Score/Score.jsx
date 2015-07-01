@@ -36,7 +36,7 @@ class Score extends React.Component {
     country = country.charAt(0).toUpperCase() + country.slice(1);
     const location = meetup.city + ', ' + country;
     const date = meetup.org_starttime;
-    const short_desc = {  html: meetup.short_desc};
+    const short_desc = { __html: meetup.short_desc};
     
     return (
       <div class="info">
