@@ -27,11 +27,6 @@ export default Marty.createContainer(Grid, {
     }.bind(this), 200);
 
     this.app.gridActions.addMeetup();
-    /*
-    window.setInterval(function () {
-      this.app.gridActions.addMeetup();
-    }.bind(this), 3000);
-*/
 
     window.addEventListener('keydown', function(event) {
       switch(event.keyCode) {

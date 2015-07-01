@@ -42,7 +42,9 @@ class GridStore extends Marty.Store {
         y: 0
       }],
       direction: 'right',
-      hit: false
+      hit: false,
+      gameover: false,
+      won: false
     };
     this.handlers = {
       setDirection: GridConstants.DIRECTION,
@@ -102,7 +104,7 @@ class GridStore extends Marty.Store {
     if (meetup) {
       this.state.meetups.push(meetup);
     } else {
-      console.log('you won');
+      this.state.won = true;
     }
     this.hasChanged();
   }
@@ -144,7 +146,7 @@ class GridStore extends Marty.Store {
     }
     _.forEach(this.state.snake, (n) => {
       if (newpos.x === n.x && newpos.y === n.y) {
-        console.log('gameover');
+        this.state.gameover = true;
       }
     });
     _.forEach(this.state.meetups, (n) => {
