@@ -1,6 +1,7 @@
 {
   "name": "react-snake",
   "version": "0.0.1",
+  "main": "./app/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/robgietema/react-snake.git"
