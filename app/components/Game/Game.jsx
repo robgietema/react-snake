@@ -15,6 +15,7 @@
 import React from 'react';
 import GridContainer from '../../containers/GridContainer/GridContainer';
 import './Game.scss';
+import ScoreContainer from '../../containers/ScoreContainer/ScoreContainer';
 
 /**
  * This class defines the Game component.
@@ -33,6 +34,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <GridContainer />
+        <ScoreContainer />
       </div>
     );
   }
