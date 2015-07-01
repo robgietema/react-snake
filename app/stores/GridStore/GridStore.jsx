@@ -119,6 +119,7 @@ class GridStore extends Marty.Store {
       }
       break;  
     }
+    this.state.snake.shift();
     this.state.snake.push(newpos);
     this.hasChanged();
   }

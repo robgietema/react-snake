@@ -18,6 +18,9 @@ import Game from '../Game/Game';
 const { ApplicationContainer } = Marty;
 import GridStore from '../../stores/GridStore/GridStore';
 import GridActions from '../../actions/GridActions';
+import MeetupStore from '../../stores/MeetupStore/MeetupStore';
+import MeetupsApi from '../../apis/MeetupsApi/MeetupsApi';
+import MeetupsQueries from '../../queries/MeetupsQueries/MeetupsQueries';
 
 /**
  * This class defines the Snake application.
@@ -36,7 +39,10 @@ class GameApplication extends Marty.Application {
     super(options);
     this.register({
       'gridStore': GridStore,
-      'gridActions': GridActions
+      'gridActions': GridActions,
+      'meetupStore': MeetupStore,
+      'meetupsApi': MeetupsApi,
+      'meetupsQueries': MeetupsQueries
     });
   }
 }
