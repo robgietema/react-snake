@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/robgietema/react-snake.git"
   },
+  "scripts": {
+    "start": "gulp"
+  },
   "peerDependencies": {
     "gulp-jest": "0.4.0",
     "react": "0.13.3"
