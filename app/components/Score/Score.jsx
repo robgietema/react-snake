@@ -30,13 +30,14 @@ class Score extends React.Component {
   createInfo( meetup ) {
     const title = meetup.name;
     const img = meetup.photo_urls.thumb ? <img src={meetup.photo_urls.thumb} /> : '' ;
+    const location = meetup.city + ', ' + meetup.country;
     const date = meetup.org_starttime;
     const short_desc = {__html: meetup.short_desc};
     
     return (
       <div class="info">
         <h1>{title}</h1>
-        <date>{date}</date>
+        <div className="locationdate">{location}, {date}</div>
         <div dangerouslySetInnerHTML={short_desc}></div>
       </div>
     );
