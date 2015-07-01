@@ -1,11 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
+import Dot from '../Dot/Dot';
 import './Grid.scss';
 
-class Grid extends React.Component {
+const wide = 20;
+const high = 15;
 
-  wide: 20,
-  high: 15,
+class Grid extends React.Component {
   
   /**
   * Render method.
@@ -15,15 +16,15 @@ class Grid extends React.Component {
   */
   render() {
     var list = [];
-    _.times( this.wide, function( x ) {
-      
-      list.push( x );
-      _.times( this.high, function( y ) {
-        list[x].push( y );      
+    _.times( wide, function( x ) {
+      const temp = [];
+      _.times( high, function( y ) {
+        temp.push( '' );      
       }, this);
-      
+      list.push( temp );
     }, this);
     
+    console.log( list );
     
     
     // loop through meetups
@@ -33,9 +34,19 @@ class Grid extends React.Component {
 //   loop snake:
 //      list[meethup.x][meetup.y] = red;
 
+    list[3][3] = 'blue';
+    
+    const dots = _.map( list, function( x ) {
+      _.map( x, function( y ) {
+        return (
+          <Dot />
+        );
+      });
+    });
+    
     return (
       <div className="grid">
-          
+        {dots}
       </div>
     );
   }

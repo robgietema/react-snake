@@ -15,11 +15,11 @@
 import React from 'react';
 import Router from 'react-router';
 const { Route, DefaultRoute } = Router;
-import SnakeApp from './components/SnakeApp/SnakeApp';
+import GameApp from './components/GameApp/GameApp';
 
 const routes = (
   <Route name="app" path="/">
-    <DefaultRoute handler={SnakeApp} />
+    <DefaultRoute handler={GameApp} />
   </Route>
 );
 

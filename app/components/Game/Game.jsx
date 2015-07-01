@@ -13,6 +13,7 @@
  */
 
 import React from 'react';
+import Grid from '../Grid/Grid';
 import './Game.scss';
 
 /**
@@ -32,7 +33,6 @@ class Game extends React.Component {
     return (
       <div className="game">
         <Grid />
-        <Score />
       </div>
     );
   }

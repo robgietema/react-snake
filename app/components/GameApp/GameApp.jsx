@@ -14,7 +14,7 @@
 
 import React from 'react';
 import Marty from 'marty';
-import Snake from '../Snake/Snake';
+import Game from '../Game/Game';
 const { ApplicationContainer } = Marty;
 
 /**
@@ -22,7 +22,7 @@ const { ApplicationContainer } = Marty;
  *
  * @class SnakeApplication
  */
-class SnakeApplication extends Marty.Application {
+class GameApplication extends Marty.Application {
 
   /**
    * Class constructor
@@ -35,14 +35,14 @@ class SnakeApplication extends Marty.Application {
   }
 }
 
-const app = new SnakeApplication();
+const app = new GameApplication();
 
 /**
- * This class defines the Snake component.
+ * This class defines the Game component.
  *
  * @class SnakeApp
  */
-class SnakeApp extends React.Component {
+class GameApp extends React.Component {
 
   /**
    * Render method.
@@ -53,10 +53,10 @@ class SnakeApp extends React.Component {
   render() {
     return (
       <ApplicationContainer app={app}>
-        <Snake />
+        <Game />
       </ApplicationContainer>
     );
   }
 }
 
-export default SnakeApp;
+export default GameApp;
