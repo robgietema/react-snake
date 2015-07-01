@@ -45,7 +45,7 @@ class Grid extends React.Component {
     
     return (
       <div className="grid">
-        <object className="background" id="map-svg" width="320" height="240" type="image/svg+xml" data="../../assets/images/world_map_iso.svg"></object>
+        <object className="background" id="map-svg" width="320" height="240" type="image/svg+xml" data="../../assets/images/world-map.svg"></object>
         {gameover}
         {won}
         {dots}
