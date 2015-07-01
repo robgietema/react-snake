@@ -31,7 +31,7 @@ class MeetupStore extends Marty.Store {
       meetup.y = Math.floor((381 - (meetup.lat * 2.39)) / 48);
     });
     
-    this.state.meetups = meetups;
+    this.state.meetups = _.shuffle(meetups);
     this.hasChanged();
   }
   
