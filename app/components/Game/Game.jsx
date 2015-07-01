@@ -32,7 +32,6 @@ class Game extends React.Component {
     return (
       <div className="game">
         <Grid />
-        <Snake />
         <Score />
       </div>
     );
