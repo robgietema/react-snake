@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Dot from '../Dot/Dot';
+import Controls from '../Controls/Controls';
 import './Grid.scss';
 
 const wide = 20;
@@ -49,6 +50,7 @@ class Grid extends React.Component {
         {gameover}
         {won}
         {dots}
+        <Controls app={this.app} />
       </div>
     );
   }
