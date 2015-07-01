@@ -32,7 +32,6 @@ class MeetupStore extends Marty.Store {
    */
   constructor(options) {
     super(options);
-    console.log('creating meetup store');
     
     this.handlers = {
       setMeetups: MeetupsConstants.MEETUPS
