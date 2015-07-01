@@ -41,7 +41,8 @@ class GridStore extends Marty.Store {
         x: 1,
         y: 0
       }],
-      direction: 'right'
+      direction: 'right',
+      hit: false
     };
     this.handlers = {
       setDirection: GridConstants.DIRECTION,
@@ -68,6 +69,16 @@ class GridStore extends Marty.Store {
    */
   getSnake() {
     return this.state.snake;
+  }
+
+  /**
+   * Get the hit.
+   *
+   * @method hit
+   * @return {Object} Hit object
+   */
+  getHit() {
+    return this.state.hit;
   }
 
   /**
@@ -138,7 +149,7 @@ class GridStore extends Marty.Store {
       }
     });
     if (hit) {
-      console.log(hit);
+      this.state.hit = hit;
       _.pull(this.state.meetups, hit);
     } else {
       this.state.snake.shift();
