@@ -13,7 +13,7 @@
  */
 
 import React from 'react';
-import Grid from '../Grid/Grid';
+import GridContainer from '../../containers/GridContainer/GridContainer';
 import './Game.scss';
 
 /**
@@ -32,7 +32,7 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        <Grid />
+        <GridContainer />
       </div>
     );
   }
