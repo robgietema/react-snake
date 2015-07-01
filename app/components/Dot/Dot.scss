@@ -1,0 +1,14 @@
+.dot {
+  width: ( 320px / 20 );
+  height: ( 240px / 15 );
+  float: left;
+
+  &.snake {
+    background-color: green;
+  }
+  
+  &.meetup {
+    background-color: red;
+  }
+  
+}

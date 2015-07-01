@@ -12,8 +12,7 @@ class Dot extends React.Component {
   render() {
     console.log('rendering a dot');
     return (
-      <div className="dot">
-        henk
+      <div className={ 'dot ' + this.props.className }>
       </div>
     );
   }

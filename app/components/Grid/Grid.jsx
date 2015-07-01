@@ -15,16 +15,16 @@ class Grid extends React.Component {
   * @return Markup for the component
   */
   render() {
-    var list = [];
+    let list = [];
     _.times( wide, function( x ) {
-      const temp = [];
+      let temp = [];
       _.times( high, function( y ) {
         temp.push( '' );      
       }, this);
       list.push( temp );
     }, this);
     
-    console.log( list );
+//    console.log( list );
     
     
     // loop through meetups
@@ -34,14 +34,24 @@ class Grid extends React.Component {
 //   loop snake:
 //      list[meethup.x][meetup.y] = red;
 
-    list[3][3] = 'blue';
     
-    const dots = _.map( list, function( x ) {
-      console.log('mapping x', x);
+    
+//    console.log( 'getting snake', this.props.snake );
+    
+    _.each( this.props.meetups, function( coord ) {
+      list[coord.x][coord.y] = 'meetup';
+    });
+    
+    _.each( this.props.snake, function( coord ) {
+      list[coord.x][coord.y] = 'snake';
+    });
+    
+    let dots = _.map( list, function( x ) {
+//      console.log('mapping x', x);
       return _.map( x, function( y ) {
-        console.log('mapping y', y);
+//        console.log('mapping y', y);
         return (
-          <Dot />
+          <Dot className={y} />
         );
       });
     });
