@@ -26,7 +26,11 @@ class MeetupStore extends Marty.Store {
   
   
   setMeetups( data ) {
-    this.state.meetups = data;
+    let meetups = _.each( data, function( meetup ) {
+      meetup.x = parseInt(Math.random() * 20, 10);
+      meetup.y = parseInt(Math.random() * 15, 10);
+    });
+    this.state.meetups = meetups;
     this.hasChanged();
   }
   
