@@ -33,19 +33,13 @@ class GridStore extends Marty.Store {
   constructor(options) {
     super(options);
     this.state = {
-      meetups: [{
-        x: 5,
-        y: 9
-      }, {
-        x: 10,
-        y: 6 
-      }],
+      meetups: [],
       snake: [{
         x: 0,
-        y: 1
+        y: 0
       }, {
-        x: 0,
-        y: 2
+        x: 1,
+        y: 0
       }],
       direction: 'right'
     };
@@ -144,6 +138,7 @@ class GridStore extends Marty.Store {
       }
     });
     if (hit) {
+      console.log(hit);
       _.pull(this.state.meetups, hit);
     } else {
       this.state.snake.shift();

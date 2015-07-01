@@ -28,7 +28,7 @@ class MeetupStore extends Marty.Store {
   setMeetups( data ) {
     let meetups = _.each( data, function( meetup ) {
       meetup.x = Math.floor((454 + (meetup.lon * 2.52)) / 48);
-      meetup.y = Math.floor((431 - (meetup.lat * 2.39)) / 48);
+      meetup.y = Math.floor((381 - (meetup.lat * 2.39)) / 48);
     });
     
     this.state.meetups = meetups;

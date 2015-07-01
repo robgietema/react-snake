@@ -26,6 +26,7 @@ export default Marty.createContainer(Grid, {
       this.app.gridActions.move();
     }.bind(this), 200);
 
+    this.app.gridActions.addMeetup(this.app.meetupStore.getNextMeetup());
     window.setInterval(function () {
       let meetup = this.app.meetupStore.getNextMeetup();
       if (meetup) {
