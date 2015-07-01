@@ -16,7 +16,8 @@ import Marty from 'marty';
 
 const GridConstants = Marty.createConstants([
   'DIRECTION',
-  'MOVE'
+  'MOVE',
+  'ADD_MEETUP'
 ]);
 
 export default GridConstants;

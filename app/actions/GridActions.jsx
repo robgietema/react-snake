@@ -40,6 +40,16 @@ class GridActions extends Marty.ActionCreators {
   setDirection(direction) {
     this.dispatch(GridConstants.DIRECTION, direction);
   }
+
+  /**
+   * Move handler.
+   *
+   * @method move
+   * @param {Object} meetup Meetup data
+   */
+  addMeetup(meetup) {
+    this.dispatch(GridConstants.ADD_MEETUP, meetup);
+  }
 }
 
 module.exports = GridActions;
