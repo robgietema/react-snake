@@ -1,6 +1,11 @@
 import React from 'react';
 import './Dot.scss';
 
+/**
+ * This class defines the dot component.
+ *
+ * @class Dot
+ */
 class Dot extends React.Component {
   
   /**
@@ -16,7 +21,5 @@ class Dot extends React.Component {
     );
   }
 }
-
-
 
 export default Dot;
