@@ -16,9 +16,9 @@ class Grid extends React.Component {
   */
   render() {
     let list = [];
-    _.times( wide, function( x ) {
+    _.times( high, function( y ) {
       let temp = [];
-      _.times( high, function( y ) {
+      _.times( wide, function( x ) {
         temp.push( '' );      
       }, this);
       list.push( temp );
@@ -39,19 +39,21 @@ class Grid extends React.Component {
 //    console.log( 'getting snake', this.props.snake );
     
     _.each( this.props.meetups, function( coord ) {
-      list[coord.x][coord.y] = 'meetup';
+      console.log('set meetup', coord);
+      list[coord.y][coord.x] = 'meetup';
     });
     
     _.each( this.props.snake, function( coord ) {
-      list[coord.x][coord.y] = 'snake';
+      console.log('set snake', coord);
+      list[coord.y][coord.x] = 'snake';
     });
     
-    let dots = _.map( list, function( x ) {
+    let dots = _.map( list, function( y ) {
 //      console.log('mapping x', x);
-      return _.map( x, function( y ) {
-//        console.log('mapping y', y);
+      return _.map( y, function( x ) {
+        console.log('mapping x', x);
         return (
-          <Dot className={y} />
+          <Dot className={x} />
         );
       });
     });
