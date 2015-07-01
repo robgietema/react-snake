@@ -177,6 +177,11 @@ class GridStore extends Marty.Store {
     if (hit) {
       this.state.hit = hit;
       _.pull(this.state.meetups, hit);
+      var svgMap = document.getElementById("map-svg").getSVGDocument();
+      var country = svgMap.getElementById(hit.country);
+      if (country != undefined) {
+        country.setAttribute("fill", '#00c6eb');
+      }
       this.addMeetup();
     } else {
       this.state.snake.shift();
