@@ -12,15 +12,9 @@ class Score extends React.Component {
   * @return Markup for the component
   */
   render() {
-    
-//    console.log('rendering a score', this.props.hit );
-    
     const meetup = this.props.hit;
-    let info = '';
-    if( meetup ) {
-      info = this.createInfo( meetup );
-    }
-    
+    let info = meetup ? this.createInfo( meetup ) : '';
+      
     return (
       <div className="score">
         {info}
@@ -32,8 +26,10 @@ class Score extends React.Component {
   createInfo( meetup ) {
     const title = meetup.name;
     const img = meetup.photo_urls.thumb ? <img src={meetup.photo_urls.thumb} /> : '' ;
+    
     let country = countries[meetup.country];
     country = country.charAt(0).toUpperCase() + country.slice(1);
+    
     const location = meetup.city + ', ' + country;
     const date = meetup.org_starttime;
     const short_desc = { __html: meetup.short_desc};
@@ -49,6 +45,4 @@ class Score extends React.Component {
 
 }
 
-
-
-export default Score;
+export default Score
