@@ -4,7 +4,7 @@ import Marty from 'marty';
 import MeetupsConstants from '../../constants/MeetupsConstants';
 
 class MeetupStore extends Marty.Store {
-
+  
   constructor(options) {
     super(options);
     console.log('creating meetup store');
@@ -16,6 +16,8 @@ class MeetupStore extends Marty.Store {
     this.state = {
       meetups: []
     }
+    
+    this.count = 0;
   }
    
   getMeetups() {
@@ -26,6 +28,12 @@ class MeetupStore extends Marty.Store {
   setMeetups( data ) {
     this.state.meetups = data;
     this.hasChanged();
+  }
+  
+  getNextMeetup() {
+    const meetup = this.state.meetups[ this.count ];
+    this.count++;
+    return meetup;
   }
 
 }
