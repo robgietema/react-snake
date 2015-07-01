@@ -51,6 +51,12 @@ export default Marty.createContainer(Grid, {
     },
     meetups() {
       return this.app.gridStore.getMeetups();
+    },
+    gameover() {
+      return this.app.gridStore.getGameOver();
+    },
+    won() {
+      return this.app.gridStore.getWon();
     }
   }
 });

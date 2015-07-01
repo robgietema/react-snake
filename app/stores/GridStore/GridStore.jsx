@@ -76,11 +76,31 @@ class GridStore extends Marty.Store {
   /**
    * Get the hit.
    *
-   * @method hit
+   * @method getHit
    * @return {Object} Hit object
    */
   getHit() {
     return this.state.hit;
+  }
+
+  /**
+   * Get won.
+   *
+   * @method getWon
+   * @return {Bool} Won or not
+   */
+  getWon() {
+    return this.state.won;
+  }
+
+  /**
+   * Get gameover.
+   *
+   * @method getGameOver
+   * @return {Bool} Gameover or not
+   */
+  getGameOver() {
+    return this.state.gameover;
   }
 
   /**
