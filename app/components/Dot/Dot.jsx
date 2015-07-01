@@ -10,7 +10,6 @@ class Dot extends React.Component {
   * @return Markup for the component
   */
   render() {
-//    console.log('rendering a dot');
     return (
       <div className={ 'dot ' + this.props.className }>
       </div>
