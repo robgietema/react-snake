@@ -39,19 +39,19 @@ class Grid extends React.Component {
 //    console.log( 'getting snake', this.props.snake );
     
     _.each( this.props.meetups, function( coord ) {
-      console.log('set meetup', coord);
+//      console.log('set meetup', coord);
       list[coord.y][coord.x] = 'meetup';
     });
     
     _.each( this.props.snake, function( coord ) {
-      console.log('set snake', coord);
+//      console.log('set snake', coord);
       list[coord.y][coord.x] = 'snake';
     });
     
     let dots = _.map( list, function( y ) {
 //      console.log('mapping x', x);
       return _.map( y, function( x ) {
-        console.log('mapping x', x);
+//        console.log('mapping x', x);
         return (
           <Dot className={x} />
         );
