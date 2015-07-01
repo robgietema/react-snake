@@ -27,17 +27,22 @@ class MeetupStore extends Marty.Store {
   
   setMeetups( data ) {
     let meetups = _.each( data, function( meetup ) {
-      meetup.x = parseInt(Math.random() * 20, 10);
-      meetup.y = parseInt(Math.random() * 15, 10);
+      meetup.x = Math.floor((454 + (meetup.lon * 2.52)) / 48);
+      meetup.y = Math.floor((431 - (meetup.lat * 2.39)) / 48);
     });
+    
     this.state.meetups = meetups;
     this.hasChanged();
   }
   
   getNextMeetup() {
-    const meetup = this.state.meetups[ this.count ];
+    const meetup = this.getCurrentMeetup();
     this.count++;
     return meetup;
+  }
+  
+  getCurrentMeetup() {
+    return this.state.meetups[ this.count ];
   }
 
 }
