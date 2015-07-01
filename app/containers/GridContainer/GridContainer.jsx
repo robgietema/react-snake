@@ -26,6 +26,13 @@ export default Marty.createContainer(Grid, {
       this.app.gridActions.move();
     }.bind(this), 200);
 
+    window.setInterval(function () {
+      this.app.gridActions.addMeetup({
+        x: parseInt(Math.random() * 20, 10),
+        y: parseInt(Math.random() * 15, 10)
+      });
+    }.bind(this), 2000);
+
     window.addEventListener('keydown', function(event) {
       console.log(event.keyCode);
       switch(event.keyCode) {

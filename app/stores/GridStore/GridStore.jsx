@@ -51,7 +51,8 @@ class GridStore extends Marty.Store {
     };
     this.handlers = {
       setDirection: GridConstants.DIRECTION,
-      move: GridConstants.MOVE
+      move: GridConstants.MOVE,
+      addMeetup: GridConstants.ADD_MEETUP
     };
   }
 
@@ -83,6 +84,17 @@ class GridStore extends Marty.Store {
    */
   setDirection(direction) {
     this.state.direction = direction;
+    this.hasChanged();
+  }
+
+  /**
+   * Add meetup.
+   *
+   * @method addMeetup
+   * @param {Object} meetup Meetup data
+   */
+  addMeetup(meetup) {
+    this.state.meetups.push(meetup);
     this.hasChanged();
   }
 
