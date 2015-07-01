@@ -13,8 +13,8 @@
  */
 
 import React from 'react';
-import Snake from '../Snake/Snake';
 import Marty from 'marty';
+import Snake from '../Snake/Snake';
 const { ApplicationContainer } = Marty;
 
 /**
