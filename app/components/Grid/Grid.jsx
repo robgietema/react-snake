@@ -58,6 +58,8 @@ class Grid extends React.Component {
       });
     });
     
+    console.log('getnetmeeting', this.app.meetupStore.getNextMeetup() );
+    
     return (
       <div className="grid">
         {dots}
