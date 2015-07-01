@@ -10,7 +10,7 @@ module.exports = function (gulp, $, config) {
 
     return gulp.src(config.contentBase + '/**/*.scss')
       .pipe(styleguide.generate({
-        title: 'Videoland',
+        title: 'Snake',
         server: true,
         rootPath: outputPath,
         overviewPath: 'README.md'
