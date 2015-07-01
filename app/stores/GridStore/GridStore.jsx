@@ -15,6 +15,7 @@
 import React from 'react';
 import Marty from 'marty';
 import GridConstants from '../../constants/GridConstants';
+import _ from 'lodash';
 
 /**
  * This class defines the Grid store.
@@ -93,6 +94,7 @@ class GridStore extends Marty.Store {
   move() {
     let pos = this.state.snake[this.state.snake.length-1];
     let newpos;
+    let hit = false;
     switch(this.state.direction) {
     case 'right':
       newpos = {
@@ -119,8 +121,23 @@ class GridStore extends Marty.Store {
       }
       break;  
     }
-    this.state.snake.shift();
+    _.forEach(this.state.snake, (n) => {
+      if (newpos.x === n.x && newpos.y === n.y) {
+        console.log('gameover');
+      }
+    });
+    _.forEach(this.state.meetups, (n) => {
+      if (newpos.x === n.x && newpos.y === n.y) {
+        hit = n;
+      }
+    });
+    if (hit) {
+      _.pull(this.state.meetups, hit);
+    } else {
+      this.state.snake.shift();
+    }
     this.state.snake.push(newpos);
+
     this.hasChanged();
   }
 }
