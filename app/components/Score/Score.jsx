@@ -39,7 +39,7 @@ class Score extends React.Component {
     const short_desc = { __html: meetup.short_desc};
     
     return (
-      <div class="info">
+      <div className="info">
         <h1>{title}</h1>
         <div className="locationdate">{location}, {date}</div>
         <div dangerouslySetInnerHTML={short_desc}></div>
