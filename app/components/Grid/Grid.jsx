@@ -37,7 +37,9 @@ class Grid extends React.Component {
     list[3][3] = 'blue';
     
     const dots = _.map( list, function( x ) {
-      _.map( x, function( y ) {
+      console.log('mapping x', x);
+      return _.map( x, function( y ) {
+        console.log('mapping y', y);
         return (
           <Dot />
         );
