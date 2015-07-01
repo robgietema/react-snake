@@ -45,10 +45,19 @@ class GridActions extends Marty.ActionCreators {
    * Move handler.
    *
    * @method move
+   */
+  addMeetup() {
+    this.dispatch(GridConstants.ADD_MEETUP);
+  }
+
+  /**
+   * Hit handler.
+   *
+   * @method hit
    * @param {Object} meetup Meetup data
    */
-  addMeetup(meetup) {
-    this.dispatch(GridConstants.ADD_MEETUP, meetup);
+  hit(meetup) {
+    this.dispatch(GridConstants.HIT, meetup);
   }
 }
 

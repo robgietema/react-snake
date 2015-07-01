@@ -26,15 +26,12 @@ export default Marty.createContainer(Grid, {
       this.app.gridActions.move();
     }.bind(this), 200);
 
-    this.app.gridActions.addMeetup(this.app.meetupStore.getNextMeetup());
+    this.app.gridActions.addMeetup();
+    /*
     window.setInterval(function () {
-      let meetup = this.app.meetupStore.getNextMeetup();
-      if (meetup) {
-        this.app.gridActions.addMeetup(meetup);
-      } else {
-        console.log('you won');
-      }
+      this.app.gridActions.addMeetup();
     }.bind(this), 3000);
+*/
 
     window.addEventListener('keydown', function(event) {
       switch(event.keyCode) {

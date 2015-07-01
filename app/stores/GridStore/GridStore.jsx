@@ -96,10 +96,14 @@ class GridStore extends Marty.Store {
    * Add meetup.
    *
    * @method addMeetup
-   * @param {Object} meetup Meetup data
    */
-  addMeetup(meetup) {
-    this.state.meetups.push(meetup);
+  addMeetup() {
+    let meetup = this.app.meetupStore.getNextMeetup();
+    if (meetup) {
+      this.state.meetups.push(meetup);
+    } else {
+      console.log('you won');
+    }
     this.hasChanged();
   }
 
@@ -151,6 +155,7 @@ class GridStore extends Marty.Store {
     if (hit) {
       this.state.hit = hit;
       _.pull(this.state.meetups, hit);
+      this.addMeetup();
     } else {
       this.state.snake.shift();
     }
