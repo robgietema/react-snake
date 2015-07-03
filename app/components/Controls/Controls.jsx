@@ -22,7 +22,7 @@ import './Controls.scss';
  * @class Grid
  */
 class Controls extends React.Component {
-  
+
   /**
    * Render method.
    *
@@ -48,7 +48,7 @@ class Controls extends React.Component {
   left() {
     this.props.app.gridActions.setDirection('left');
   }
-  
+
   /**
    * Up move method.
    *
@@ -57,16 +57,16 @@ class Controls extends React.Component {
   up() {
     this.props.app.gridActions.setDirection('up');
   }
-  
+
   /**
    * Down move method.
    *
    * @method down
    */
   down() {
-    this.props.app.gridActions.setDirection('down'); 
+    this.props.app.gridActions.setDirection('down');
   }
-  
+
   /**
    * Right move method.
    *
@@ -75,7 +75,7 @@ class Controls extends React.Component {
   right() {
     this.props.app.gridActions.setDirection('right');
   }
-  
+
 }
 
 export default Controls;

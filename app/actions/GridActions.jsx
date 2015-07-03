@@ -34,7 +34,7 @@ class GridActions extends Marty.ActionCreators {
   /**
    * Move handler.
    *
-   * @method move
+   * @method setDirection
    * @param {String} direction Direction
    */
   setDirection(direction) {
@@ -44,7 +44,7 @@ class GridActions extends Marty.ActionCreators {
   /**
    * Move handler.
    *
-   * @method move
+   * @method addMeetup
    */
   addMeetup() {
     this.dispatch(GridConstants.ADD_MEETUP);
