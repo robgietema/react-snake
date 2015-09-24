@@ -27,7 +27,7 @@ const high = 15;
  * @class Grid
  */
 class Grid extends React.Component {
-  
+
   /**
   * Render method.
   *
@@ -39,19 +39,19 @@ class Grid extends React.Component {
     _.times( high, function( y ) {
       let temp = [];
       _.times( wide, function( x ) {
-        temp.push( '' );      
+        temp.push( '' );
       }, this);
       list.push( temp );
     }, this);
-    
+
     _.each( this.props.meetups, function( coord ) {
       list[coord.y][coord.x] = 'meetup';
     });
-    
+
     _.each( this.props.snake, function( coord ) {
       list[coord.y][coord.x] = 'snake';
     });
-    
+
     let dots = _.map( list, function( y ) {
       return _.map( y, function( x ) {
         return (
@@ -62,7 +62,7 @@ class Grid extends React.Component {
 
     let gameover = this.props.gameover ? <div className="gameover">GAME OVER!<br/><br/><br/><img src="../../assets/images/animation.gif" /></div> : '';
     let won = this.props.won ? <div className="won">YOU WON!</div> : '';
-    
+
     return (
       <div className="grid">
         <object className="background" id="map-svg" width="320" height="240" type="image/svg+xml" data="../../assets/images/world-map.svg"></object>

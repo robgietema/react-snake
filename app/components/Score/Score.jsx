@@ -9,7 +9,7 @@ const countries = {"ad":"andorra","ae":"emirates","af":"afghanistan","ag":"antig
  * @class GridStore
  */
 class Score extends React.Component {
-  
+
   /**
    * Render method.
    *
@@ -19,7 +19,7 @@ class Score extends React.Component {
   render() {
     const meetup = this.props.hit;
     let info = meetup ? this.createInfo( meetup ) : '';
-      
+
     return (
       <div className="score">
         {info}
@@ -37,14 +37,14 @@ class Score extends React.Component {
   createInfo(meetup) {
     const title = meetup.name;
     const img = meetup.photo_urls.thumb ? <img src={meetup.photo_urls.thumb} /> : '' ;
-    
+
     let country = countries[meetup.country];
     country = country.charAt(0).toUpperCase() + country.slice(1);
-    
+
     const location = meetup.city + ', ' + country;
     const date = meetup.org_starttime;
     const short_desc = { __html: meetup.short_desc};
-    
+
     return (
       <div className="info">
         <h1>{title}</h1>

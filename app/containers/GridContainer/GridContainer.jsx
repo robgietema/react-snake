@@ -19,7 +19,7 @@ export default Marty.createContainer(Grid, {
   listenTo: 'gridStore',
   componentDidMount() {
     this.app.meetupsQueries.getMeetups();
-    
+
     window.setInterval(function () {
       this.app.gridActions.move();
     }.bind(this), 200);

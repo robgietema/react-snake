@@ -7,7 +7,7 @@ import './Dot.scss';
  * @class Dot
  */
 class Dot extends React.Component {
-  
+
   /**
   * Render method.
   *

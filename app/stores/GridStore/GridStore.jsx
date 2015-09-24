@@ -128,7 +128,6 @@ class GridStore extends Marty.Store {
     }
     this.hasChanged();
   }
-
   /**
    * Move the snake.
    *
@@ -144,25 +143,25 @@ class GridStore extends Marty.Store {
         x: (pos.x + 21) % 20,
         y: pos.y
       }
-      break;  
+      break;
     case 'left':
       newpos = {
         x: (pos.x + 19) % 20,
         y: pos.y
       }
-      break;  
+      break;
     case 'up':
       newpos = {
         x: pos.x,
         y: (pos.y + 14) % 15
       }
-      break;  
+      break;
     case 'down':
       newpos = {
         x: pos.x,
         y: (pos.y + 16) % 15
       }
-      break;  
+      break;
     }
     _.forEach(this.state.snake, (n) => {
       if (newpos.x === n.x && newpos.y === n.y) {
